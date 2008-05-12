@@ -17,3 +17,10 @@ PS1="[\t]\e[1;34m[\u@\e[1;32m\h\e[m:\w]\e[1;31m\$(parse_git_branch)\e[m\\$"
 
 bind '"\e[5~"':history-search-backward
 bind '"\e[6~"':history-search-forward
+
+#########
+# rails #
+#########
+
+alias ss='script/server'
+alias sc='script/console'
