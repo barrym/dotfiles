@@ -23,3 +23,10 @@ task 'will_paginate:install' do
   url = "http://github.com/mislav/will_paginate/tarball/master"
   system("wget -nv #{url} -O- | tar xzv -C #{wp_dir} --strip 1")
 end
+
+desc 'Install restful_authentication'
+task 'install:restful_authentication' do
+  puts("Installing restful authentication")
+  system("ruby script/plugin source http://svn.techno-weenie.net/projects/plugins")
+  system("ruby script/plugin install restful_authentication")
+end
