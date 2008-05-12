@@ -1,4 +1,7 @@
+.DS_Store
 *.log
+tmp/**/*
 schema.rb
 .svn
 *.pid
+*.tmproj
