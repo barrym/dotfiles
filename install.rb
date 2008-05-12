@@ -4,10 +4,10 @@
 #
 home = File.expand_path('~')
 
-Dir['*'].each do |file|
+Dir['etc/*'].each do |file|
   next if file =~ /install|readme/i
-  target = File.join(home, ".#{file}")
-      `ln -s #{File.expand_path file} #{target}`
+  target = File.join(home, ".#{File.basename(file)}")
+  puts `ln -svf #{File.expand_path file} #{target}`
 end
 
 # git push on commit
