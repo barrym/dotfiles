@@ -1,0 +1,12 @@
+[user]
+  name = "Barry Mitchelson"
+	email = barry.mitchelson@migcan.com
+
+[core]
+	excludesfile = /Users/barry/.gitignore
+[color]
+	ui = always
+[alias]
+	st = status
+	br = branch
+	co = checkout

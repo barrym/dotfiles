@@ -1,0 +1,3 @@
+set mainfont {Monaco 10}
+set textfont {Monaco 10}
+set uifont {Monaco 10}

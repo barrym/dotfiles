@@ -1,0 +1,4 @@
+*.log
+schema.rb
+.svn
+*.pid
