@@ -55,7 +55,7 @@ if rails_env = ENV['RAILS_ENV']
   rails_root = File.basename(Dir.pwd)
   IRB.conf[:PROMPT] ||= {}
   IRB.conf[:PROMPT][:RAILS] = {
-    :PROMPT_I => "#{ANSI_BACKBLUE + ANSI_YELLOW} #{ENV['RAILS_ENV']}#{ANSI_RESET} >",
+    :PROMPT_I => "#{ANSI_BACKBLUE + ANSI_YELLOW} rails #{rails_env} #{ANSI_RESET} >",
     :PROMPT_S => "#{rails_root}* ",
     :PROMPT_C => "#{rails_root}? ",
     :RETURN   => "=> %s\n" 
