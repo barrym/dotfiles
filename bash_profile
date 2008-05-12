@@ -6,6 +6,7 @@ alias ...='cd ../..'
 HISTFILESIZE=3000
 export PATH=$PATH:~/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin
 export LSCOLORS="ExfxcxdxBxegedabagacad"
+export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="vim"
 export HISTSIZE=5000
 
@@ -17,6 +18,11 @@ PS1="[\t]\e[1;34m[\u@\e[1;32m\h\e[m:\w]\e[1;31m\$(parse_git_branch)\e[m\\$"
 
 bind '"\e[5~"':history-search-backward
 bind '"\e[6~"':history-search-forward
+
+# enable bash completion in interactive shells
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
 
 #########
 # rails #
