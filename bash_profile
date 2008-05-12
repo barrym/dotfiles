@@ -1,6 +1,7 @@
 alias l='ls -lahG'
 alias ll='ls -lGarth'
 alias ..='cd ..'
+alias ...='cd ../..'
 
 HISTFILESIZE=3000
 export PATH=$PATH:~/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin
