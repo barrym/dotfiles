@@ -1,9 +1,30 @@
 #!/usr/bin/ruby
-require 'rubygems'
-require 'irb/completion'
-require 'irb/ext/save-history'
-require 'pp'
-require 'what_methods'
+
+def prefer lib
+  require lib
+rescue LoadError
+  puts "#{lib} not installed, skipping - sudo gem install #{lib}"
+end
+
+prefer 'rubygems'
+prefer 'irb/completion'
+prefer 'irb/ext/save-history'
+prefer 'pp'
+prefer 'what_methods'
+prefer 'irb_callbacks'
+prefer 'benchmark'
+
+module IRB
+  def self.around_eval(&block)
+    @timing = Benchmark.realtime do
+      block.call
+    end
+  end
+
+  def self.after_output
+    puts "=> #{ANSI_GREEN}#{'%.3f' % @timing} seconds#{ANSI_RESET}"
+  end
+end
 
 ANSI_BLACK = "\033[0;30m"
 ANSI_GRAY = "\033[1;30m"
@@ -46,7 +67,7 @@ SCREEN_SET_STATUS = "\033]0;"
 SCREEN_END = "\007"
 
 IRB.conf[:SAVE_HISTORY] = 1000
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history" 
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
 
@@ -58,7 +79,7 @@ if rails_env = ENV['RAILS_ENV']
     :PROMPT_I => "#{ANSI_BACKBLUE + ANSI_YELLOW} rails #{rails_env} #{ANSI_RESET} >",
     :PROMPT_S => "#{rails_root}* ",
     :PROMPT_C => "#{rails_root}? ",
-    :RETURN   => "=> %s\n" 
+    :RETURN   => "=> %s\n"
   }
   IRB.conf[:PROMPT_MODE] = :RAILS
 
@@ -67,20 +88,20 @@ if rails_env = ENV['RAILS_ENV']
   IRB.conf[:IRB_RC] = Proc.new do
     ActiveRecord::Base.logger = Logger.new(STDOUT)
     ActiveRecord::Base.instance_eval { alias :[] :find }
-    
+
     module ActiveRecord
       class Base
         def self.first(*args)
           options = args.extract_options!
           find_initial(options)
         end
-        
+
         def self.all(*args)
           options = args.extract_options!
           find_every(options)
         end
       end
     end
-    
+
   end
 end
