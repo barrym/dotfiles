@@ -4,7 +4,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 HISTFILESIZE=3000
-export PATH=$PATH:~/bin:~/packages/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin
+export PATH=~/bin:~/packages/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin:$PATH
 export LSCOLORS="ExfxcxdxBxegedabagacad"
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="vim"
