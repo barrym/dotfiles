@@ -30,3 +30,9 @@ fi
 
 alias ss='script/server'
 alias sc='script/console'
+
+################################################
+# add host specific commands to ~/.bash_extras #
+################################################
+
+source ~/.bash_extras
