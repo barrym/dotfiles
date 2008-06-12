@@ -2,6 +2,7 @@ alias l='ls -lahG'
 alias ll='ls -lGarth'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias less='less -rf'
 
 HISTFILESIZE=3000
 export PATH=$PATH:~/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin
@@ -20,9 +21,11 @@ bind '"\e[5~"':history-search-backward
 bind '"\e[6~"':history-search-forward
 
 # enable bash completion in interactive shells
-if [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
+if [ -f /opt/local/etc/bash_completion ]; then
+  . /opt/local/etc/bash_completion
 fi
+
+complete -C ~/dotfiles/scripts/rake_autocomplete.txt -o default rake
 
 #########
 # rails #
