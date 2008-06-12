@@ -5,3 +5,4 @@ schema.rb
 .svn
 *.pid
 *.tmproj
+database.yml
