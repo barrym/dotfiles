@@ -5,7 +5,7 @@ alias ...='cd ../..'
 alias less='less -rf'
 
 HISTFILESIZE=3000
-export PATH=$PATH:~/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin
+export PATH=~/bin:~/packages/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin:$PATH
 export LSCOLORS="ExfxcxdxBxegedabagacad"
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="vim"
@@ -33,3 +33,9 @@ complete -C ~/dotfiles/scripts/rake_autocomplete.txt -o default rake
 
 alias ss='script/server'
 alias sc='script/console'
+
+################################################
+# add host specific commands to ~/.bash_extras #
+################################################
+
+source ~/.bash_extras
