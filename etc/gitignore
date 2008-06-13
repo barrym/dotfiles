@@ -1,8 +1,8 @@
 .DS_Store
 *.log
 tmp/**/*
-schema.rb
 .svn
 *.pid
 *.tmproj
-database.yml
+config/database.yml
+db/development_structure.sql
