@@ -21,6 +21,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
+highlight comment ctermfg=darkgreen
+
 "colorscheme vibrantink
 
 runtime! macros/matchit.vim
