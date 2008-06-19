@@ -13,11 +13,10 @@ export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="vim"
 export HISTSIZE=5000
 
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/.\1/'
-}
+# Git
+source ~/dotfiles/scripts/git-completion.bash
 
-PS1="[\t]\e[1;34m[\u@\e[1;32m\h\e[m:\w\e[1;32m\$(parse_git_branch)\e[m]\\$"
+PS1='[\t]\e[1;34m[\u@\e[1;32m\h\e[m:\w\e[1;32m$(__git_ps1 ".%s")\e[m]\\$'
 
 bind '"\e[5~"':history-search-backward
 bind '"\e[6~"':history-search-forward
@@ -27,6 +26,7 @@ if [ -f /opt/local/etc/bash_completion ]; then
   . /opt/local/etc/bash_completion
 fi
 
+# Rake auto-complete
 complete -C ~/dotfiles/scripts/rake_autocomplete.txt -o default rake
 
 #########
@@ -35,6 +35,7 @@ complete -C ~/dotfiles/scripts/rake_autocomplete.txt -o default rake
 
 alias ss='script/server'
 alias sc='script/console'
+alias sd='script/dbconsole'
 
 ################################################
 # add host specific commands to ~/.bash_extras #
