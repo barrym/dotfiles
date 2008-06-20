@@ -40,6 +40,6 @@ alias sc='script/console'
 # add host specific commands to ~/.bash_extras #
 ################################################
 
-if [ -f ~/.bash_extras ];then
+if [ -f ~/.bash_extras ]; then
   source ~/.bash_extras
 fi
