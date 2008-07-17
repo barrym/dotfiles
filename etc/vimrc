@@ -7,6 +7,8 @@ filetype plugin indent on " Enable filetype-specific indenting and plugins
 map <silent> <unique> + <C-w>+
 map <silent> <unique> - <C-w>-
 
+imap <C-l> <Space>=><Space>
+
 set number
 set smartindent
 set nobackup
