@@ -3,7 +3,7 @@ syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype-specific indenting and plugins
 
 " mappings
-map <silent> <unique> b :BufExplorer<CR>
+"map <silent> <unique> b :BufExplorer<CR>
 map <silent> <unique> + <C-w>+
 map <silent> <unique> - <C-w>-
 
@@ -23,6 +23,6 @@ set tabstop=2
 
 highlight comment ctermfg=darkgreen
 
-"colorscheme vibrantink
+colorscheme vibrantink
 
 runtime! macros/matchit.vim
