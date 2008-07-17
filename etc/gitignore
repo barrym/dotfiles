@@ -1,8 +1,8 @@
 .DS_Store
 *.log
-tmp/**/*
+tmp/**/*.log
 .svn
 *.pid
 *.tmproj
+*.swp
 config/database.yml
-db/development_structure.sql

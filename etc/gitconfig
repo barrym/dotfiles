@@ -1,12 +1,12 @@
 [user]
-  name = "Barry Mitchelson"
+	name = Barry Mitchelson
 	email = barry.mitchelson@gmail.com
 [apply]
 	whitespace = nowarn
 [core]
 	excludesfile = /Users/barry/.gitignore
 [color]
-	ui = always
+  ui = true
 [alias]
 	st = status
 	br = branch
