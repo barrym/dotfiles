@@ -3,12 +3,21 @@ syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype-specific indenting and plugins
 
 " mappings
-"map <silent> <unique> b :BufExplorer<CR>
+map <silent> <unique> b :BufExplorer<CR>
+
+"Window control
 map <silent> <unique> + <C-w>+
 map <silent> <unique> - <C-w>-
 
+"Rails
 imap <C-l> <Space>=><Space>
 
+"Rspec
+map ,ofs :%s/ it / xit ''?xitx:w
+map ,ons :%s/ xit / it /'':w
+
+
+set autoread
 set number
 set smartindent
 set nobackup
@@ -24,8 +33,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
+colorscheme github
 highlight comment ctermfg=darkgreen
-
-colorscheme vibrantink
+hi Cursor guifg=#000000 guibg=#888888
 
 runtime! macros/matchit.vim
