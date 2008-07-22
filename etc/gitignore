@@ -6,3 +6,5 @@ tmp/**/*.log
 *.tmproj
 *.swp
 config/database.yml
+vim/backups/*
+vim/tmp/*

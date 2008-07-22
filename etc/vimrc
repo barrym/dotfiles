@@ -16,6 +16,10 @@ imap <C-l> <Space>=><Space>
 map ,ofs :%s/ it / xit ''?xitx:w
 map ,ons :%s/ xit / it /'':w
 
+"Backups & Files
+set backup                     " Enable creation of backup file.
+set backupdir=~/.vim/backups " Where backups will go.
+set directory=~/.vim/tmp     " Where temporary files will go.
 
 set autoread
 set number
