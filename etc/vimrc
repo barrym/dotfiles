@@ -3,7 +3,7 @@ syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype-specific indenting and plugins
 
 " mappings
-map <silent> <unique> b :BufExplorer<CR>
+map ,b :BufExplorer<CR>
 map ,f :Find<space>
 
 "Window control
