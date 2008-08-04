@@ -7,7 +7,7 @@ alias ...='cd ../..'
 alias less='less -rf'
 
 HISTFILESIZE=3000
-export PATH=~/bin:~/packages/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin:$PATH
+export PATH=~/dotfiles/scripts/:~/bin:~/packages/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin:$PATH
 export LSCOLORS="ExfxcxdxBxegedabagacad"
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="vim"
