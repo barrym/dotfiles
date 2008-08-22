@@ -42,4 +42,7 @@ colorscheme vividchalk
 highlight comment ctermfg=darkgreen
 hi Cursor guifg=#000000 guibg=#888888
 
+autocmd BufRead *.ru set filetype=ruby
+autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
+
 runtime! macros/matchit.vim
