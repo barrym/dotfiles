@@ -6,6 +6,11 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias less='less -rf'
 
+if [[ `uname` == 'Linux' ]]; then
+  alias l='ls -lahG --color'
+  alias ll='ls -lGarth --color'
+fi
+
 HISTFILESIZE=3000
 export PATH=~/dotfiles/scripts/:~/bin:~/packages/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin:$PATH
 export LSCOLORS="ExfxcxdxBxegedabagacad"
