@@ -7,8 +7,8 @@ alias ...='cd ../..'
 alias less='less -rf'
 
 if [[ `uname` == 'Linux' ]]; then
-  alias l='ls -lahG --color'
-  alias ll='ls -lGarth --color'
+  alias l='ls -lah --color'
+  alias ll='ls -larth --color'
 fi
 
 HISTFILESIZE=3000
@@ -29,6 +29,10 @@ bind '"\e[6~"':history-search-forward
 # enable bash completion in interactive shells
 if [ -f /opt/local/etc/bash_completion ]; then
   . /opt/local/etc/bash_completion
+fi
+
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
 fi
 
 # Rake auto-complete
