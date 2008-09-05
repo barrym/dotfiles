@@ -38,12 +38,15 @@ fi
 # Rake auto-complete
 complete -C ~/dotfiles/scripts/rake_autocomplete.txt -o default rake
 
-# Cache, and complete, Cheats
-if [ ! -r ~/.cheats ] || [[ ! "" == `find ~ '.cheats' -ctime 1 -maxdepth 0` ]]; then
-  echo "Rebuilding Cheat cache... " 
-  cheat sheets | egrep '^ ' | awk {'print $1'} > ~/.cheats
+TEMP=`which cheat`
+if [ $? == 0 ]; then
+  # Cache, and complete, Cheats
+  if [ ! -r ~/.cheats ] || [[ ! "" == `find ~ '.cheats' -ctime 1 -maxdepth 0` ]]; then
+    echo "Rebuilding Cheat cache... " 
+    cheat sheets | egrep '^ ' | awk {'print $1'} > ~/.cheats
+  fi
+  complete -W "$(cat ~/.cheats)" cheat
 fi
-complete -W "$(cat ~/.cheats)" cheat
 
 #########
 # rails #
