@@ -14,8 +14,8 @@ map <silent> <unique> - <C-w>-
 imap <C-l> <Space>=><Space>
 
 "Rspec
-map ,ofs :%s/ it / xit ''?xitx:w
-map ,ons :%s/ xit / it /'':w
+map ,ofs :%s/ it / xit <CR>''?xit<CR>x:w<CR>
+map ,ons :%s/ xit / it /<CR>'':w<CR>
 
 "Backups & Files
 set backup                     " Enable creation of backup file.
@@ -43,6 +43,7 @@ highlight comment ctermfg=darkgreen
 hi Cursor guifg=#000000 guibg=#888888
 
 autocmd BufRead *.ru set filetype=ruby
+autocmd BufRead *.feature set filetype=ruby
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 
 runtime! macros/matchit.vim
