@@ -7,3 +7,4 @@ tmp/**/*.log
 *.swp
 vim/backups/*
 vim/tmp/*
+tags
