@@ -46,5 +46,6 @@ hi Cursor guifg=#000000 guibg=#888888
 autocmd BufRead *.ru set filetype=ruby
 autocmd BufRead *.feature set filetype=ruby
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
+autocmd BufNewFile,BufRead *.textile setf textile
 
 runtime! macros/matchit.vim
