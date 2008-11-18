@@ -5,6 +5,7 @@ filetype plugin indent on " Enable filetype-specific indenting and plugins
 " mappings
 map ,b :BufExplorer<CR>
 map ,f :Find<space>
+map ,n :NERDTree<CR>
 
 "Window control
 map <silent> <unique> + <C-w>+
