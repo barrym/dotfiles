@@ -12,19 +12,20 @@ prefer 'irb/ext/save-history'
 prefer 'pp'
 prefer 'what_methods'
 prefer 'irb_callbacks'
-prefer 'benchmark'
 
-module IRB
-  def self.around_eval(&block)
-    @timing = Benchmark.realtime do
-      block.call
-    end
-  end
-
-  def self.after_output
-    puts "=> #{ANSI_GREEN}#{'%.3f' % @timing} seconds#{ANSI_RESET}"
-  end
-end
+# prefer 'benchmark'
+# 
+# module IRB
+#   def self.around_eval(&block)
+#     @timing = Benchmark.realtime do
+#       block.call
+#     end
+#   end
+# 
+#   def self.after_output
+#     puts "=> #{ANSI_GREEN}#{'%.3f' % @timing} seconds#{ANSI_RESET}"
+#   end
+# end
 
 ANSI_BLACK = "\033[0;30m"
 ANSI_GRAY = "\033[1;30m"
@@ -70,6 +71,24 @@ IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
+
+module IRB
+  def self.result_format
+    conf[:PROMPT][conf[:PROMPT_MODE]][:RETURN]
+  end
+
+  def self.result_format=(str)
+    result_format.replace(str)
+  end
+
+  def self.loud
+    self.result_format = "=> %s\n"
+  end
+
+  def self.quiet
+    self.result_format = ''
+  end
+end 
 
 # Just for Rails...
 if rails_env = ENV['RAILS_ENV']
