@@ -21,7 +21,24 @@ export HISTSIZE=5000
 # Git
 source ~/dotfiles/scripts/git-completion.bash
 
-PS1='[\t]\e[1;34m[\u@\e[1;32m\h\e[m:\w\e[1;32m$(__git_ps1 ".%s")\e[m]\\$'
+function set_prompt {
+  local BLUE="\[\033[1;34m\]"
+  local GREEN="\[\033[1;32m\]"
+  local RESET="\[\033[1;37m\]"
+  local USERNAME="\u"
+  local HOST="\h"
+  #local GIT= __git_ps1(".%s")
+
+  prompt1="[\t] ${BLUE}${USERNAME}${RESET}@${GREEN}${HOST}${RESET}:\w${GREEN}"
+  prompt2='$(__git_ps1 ".%s")'
+  prompt3="${RESET}\\$"
+
+  PS1="$prompt1$prompt2$prompt3"
+  
+}
+
+set_prompt
+#PS1='[\t]\e[1;34m[\u@\e[1;32m\h\e[m:\w\e[1;32m$(__git_ps1 ".%s")\e[m]\\$'
 
 bind '"\e[5~"':history-search-backward
 bind '"\e[6~"':history-search-forward
