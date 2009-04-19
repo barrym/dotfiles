@@ -1,1 +1,2 @@
 tComment.vba: call delete('/Users/barry/.vim/doc/tComment.txt')|call delete('/Users/barry/.vim/plugin/tComment.vim')|call delete('/Users/barry/.vim/autoload/tcomment.vim')
+Align.vba: call delete('/Users/barry/.vim/plugin/AlignPlugin.vim')|call delete('/Users/barry/.vim/plugin/AlignMapsPlugin.vim')|call delete('/Users/barry/.vim/plugin/cecutil.vim')|call delete('/Users/barry/.vim/doc/Align.txt')|call delete('/Users/barry/.vim/autoload/Align.vim')|call delete('/Users/barry/.vim/autoload/AlignMaps.vim')
