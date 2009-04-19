@@ -21,7 +21,7 @@ set listchars=tab:>-,eol:$
 let mapleader = ","
 
 " --- Backups & Files ---
-set backup                     " Enable creation of backup file.
+set backup                 " Enable creation of backup file.
 set backupdir=~/.vim/backups " Where backups will go.
 set directory=~/.vim/tmp     " Where temporary files will go.
 

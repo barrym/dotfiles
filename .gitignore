@@ -1,3 +1,5 @@
+etc/vim/backups/*
+!etc/vim/backups/placeholder
 etc/vim/.netrwhist
 *.swp
 *.swo
