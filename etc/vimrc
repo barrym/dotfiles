@@ -56,7 +56,7 @@ map <Leader>ons :%s/ xit / it /<CR>'':w<CR>
 " --- Align ---
 
 " From inside a hash, autoindents, then aligns on =>
-nmap <silent> <Leader>ih <ESC>:AlignPush<CR>:AlignCtrl lp1P1l<CR>mmvaB:Align =><CR>:AlignPop<CR>'mvaB=
+nmap <silent> <Leader>ih <ESC>:AlignPush<CR>:AlignCtrl lp1P1l<CR>mmviB:Align =><CR>:AlignPop<CR>'mvaB=
 
 " Autoformats a single line hash
 nmap <Leader>fh <ESC>^:s/{/{\r/<CR>:s/}$/\r}<CR>vaB:s/\v,\s*:/,\r:/g<CR><Leader>ih
