@@ -10,7 +10,6 @@ prefer 'rubygems'
 prefer 'irb/completion'
 prefer 'irb/ext/save-history'
 prefer 'pp'
-prefer 'what_methods'
 prefer 'irb_callbacks'
 
 # prefer 'benchmark'
