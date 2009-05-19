@@ -14,7 +14,7 @@ fi
 HISTFILESIZE=3000
 export PATH=~/dotfiles/scripts/:~/bin:~/packages/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/usr/local/apache2/bin:$PATH
 export LSCOLORS="ExfxcxdxBxegedabagacad"
-export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH=~/packages/man:/usr/local/man:$MANPATH
 export EDITOR="vim"
 export HISTSIZE=5000
 
