@@ -1,0 +1,10 @@
+"2.0 (created: 2009/03/28 23:48:07)
+map ,f :open http://talk.theshining.org<CR>
+map ,r :open http://www.google.com/reader<CR>
+map ,m :open http://mail.google.com<CR>
+set defsearch=yubnub
+set runtimepath=/Users/barry/.vimperator
+
+source! ~/.vimperatorrc.local
+
+" vim: set ft=vimperator:
