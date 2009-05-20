@@ -1,12 +1,12 @@
 "2.0 (created: 2009/03/28 23:48:07)
 
-map ,t :open http://talk.theshining.org<CR>
-map ,r :open http://www.google.com/reader<CR>
-map ,m :open http://mail.google.com<CR>
-map ,f :open http://beta.friendfeed.com<CR>
+map ,t :tabopen http://talk.theshining.org<CR>
+map ,r :tabopen http://www.google.com/reader<CR>
+map ,m :tabopen http://mail.google.com<CR>
+map ,f :tabopen http://beta.friendfeed.com<CR>
 
 set defsearch=yubnub
-set guioptions=rbB
+set guioptions=rbBn
 
 set runtimepath=/Users/barry/.vimperator
 
