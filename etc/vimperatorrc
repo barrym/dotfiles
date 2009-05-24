@@ -1,9 +1,10 @@
 "2.0 (created: 2009/03/28 23:48:07)
 
-map ,t :tabopen http://talk.theshining.org<CR>
-map ,r :tabopen http://www.google.com/reader<CR>
-map ,m :tabopen http://mail.google.com<CR>
 map ,f :tabopen http://beta.friendfeed.com<CR>
+map ,g :tabopen http://github.com<CR>
+map ,m :tabopen http://mail.google.com<CR>
+map ,r :tabopen http://www.google.com/reader<CR>
+map ,t :tabopen http://talk.theshining.org<CR>
 
 set defsearch=yubnub
 set guioptions=rbBn
