@@ -6,7 +6,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias less='less -rf'
 
-set -o vi
+#set -o vi
 
 if [[ `uname` == 'Linux' ]]; then
   alias l='ls -lah --color'
