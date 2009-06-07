@@ -11,6 +11,7 @@ alias less='less -rf'
 if [[ `uname` == 'Linux' ]]; then
   alias l='ls -lah --color'
   alias ll='ls -larth --color'
+  alias mvim='gvim'
 fi
 
 HISTFILESIZE=3000
