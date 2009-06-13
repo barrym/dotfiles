@@ -48,6 +48,10 @@ map <Leader>n :NERDTree<CR>
 map <silent> <unique> + <C-w>+
 map <silent> <unique> - <C-w>-
 
+" --- Erlang ---
+map <Leader>gf :0r ~/.vim/templates/gen_server_template.full<CR>:set filetype=erlang<CR>
+map <Leader>gm :0r ~/.vim/templates/gen_server_template.mini<CR>:set filetype=erlang<CR>
+
 " --- Rails ---
 imap <C-l> <Space>=><Space>
 
