@@ -38,6 +38,15 @@ autocmd BufNewFile,BufRead *.textile setf textile
 
 runtime! macros/matchit.vim
 
+" Remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+highlight CursorLine guibg=#1D2747
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd InsertLeave * redraw!
+match ExtraWhitespace /\s\+\%#\@<!$/
 
 " --- mappings ---
 map <Leader>b :BufExplorer<CR>
