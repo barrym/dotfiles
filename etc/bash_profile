@@ -6,8 +6,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias less='less -rf'
 
-#set -o vi
-
 if [[ `uname` == 'Linux' ]]; then
   alias l='ls -lah --color'
   alias ll='ls -larth --color'
@@ -37,7 +35,7 @@ function set_prompt {
   prompt3="${RESET}\\$"
 
   PS1="$prompt1$prompt2$prompt3"
-  
+
 }
 
 set_prompt
@@ -62,7 +60,7 @@ complete -C ~/dotfiles/scripts/rake_autocomplete.txt -o default rake
 # if [ $? == 0 ]; then
 #   # Cache, and complete, Cheats
 #   if [ ! -r ~/.cheats ] || [[ ! "" == `find ~ '.cheats' -ctime 1 -maxdepth 0` ]]; then
-#     echo "Rebuilding Cheat cache... " 
+#     echo "Rebuilding Cheat cache... "
 #     cheat sheets | egrep '^ ' | awk {'print $1'} > ~/.cheats
 #   fi
 #   complete -W "$(cat ~/.cheats)" cheat
