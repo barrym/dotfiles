@@ -7,7 +7,7 @@ set number
 set smartindent
 set nobackup
 set incsearch
-set hlsearch
+" set hlsearch
 set wrapscan
 set smartcase ignorecase
 set showcmd
@@ -44,9 +44,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 highlight CursorLine guibg=#1D2747
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd InsertLeave * redraw!
 match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufRead,BufNewFile,ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufRead,BufNewFile,InsertLeave * redraw!
 
 " --- mappings ---
 map <Leader>b :BufExplorer<CR>
