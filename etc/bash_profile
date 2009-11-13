@@ -19,6 +19,11 @@ export MANPATH=~/packages/man:/usr/local/man:$MANPATH
 export EDITOR="vim"
 export HISTSIZE=5000
 
+# Go
+export GOROOT=$HOME/go
+export GOARCH=amd64
+export GOOS=darwin
+
 # Git
 source ~/dotfiles/scripts/git-completion.bash
 
