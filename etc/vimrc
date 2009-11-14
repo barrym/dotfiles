@@ -37,6 +37,11 @@ autocmd BufRead *.feature set filetype=ruby
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 autocmd BufNewFile,BufRead *.textile setf textile
 autocmd BufNewFile,BufRead *.go setf go
+augroup mkd
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
+augroup END
 
 runtime! macros/matchit.vim
 
