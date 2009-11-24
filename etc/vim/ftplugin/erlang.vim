@@ -59,7 +59,7 @@ if !exists("*GetErlangFold")
 	let s:ErlangEndHead     = '^\s\+[a-zA-Z-_{}\[\], ]\+)\(\s+when\s+.*\)\?\s\+->\s\(%.*\)\?*$'
 	let s:ErlangBlankLine   = '^\s*\(%.*\)\?$'
 
-	" Auxiliary fold functions {{{2 
+	" Auxiliary fold functions {{{2
 	function s:GetNextNonBlank(lnum)
 		let lnum = nextnonblank(a:lnum + 1)
 		let line = getline(lnum)
@@ -84,7 +84,7 @@ if !exists("*GetErlangFold")
 			endif
 			let str .= getline(lnum)
 		endwhile
-		return matchstr(str, 
+		return matchstr(str,
 			\ '\(^(\s*\)\@<=.*\(\s*)\(\s\+when\s\+.*\)\?\s\+->\s*\(%.*\)\?$\)\@=')
 	endfunction
 
@@ -92,7 +92,7 @@ if !exists("*GetErlangFold")
 		let pos = 0
 		let ac = 0 " arg count
 		let arguments = a:arguments
-		
+
 		" Change list / tuples into just one A(rgument)
 		let erlangTuple = '{\([A-Za-z_,|=\-\[\]]\|\s\)*}'
 		let erlangList  = '\[\([A-Za-z_,|=\-{}]\|\s\)*\]'
@@ -105,7 +105,7 @@ if !exists("*GetErlangFold")
 		while arguments =~ erlangList
 			let arguments = substitute(arguments, erlangList, "A", "g")
 		endwhile
-		
+
 		let len = strlen(arguments)
 		while pos < len && pos > -1
 			let ac += 1
@@ -131,7 +131,7 @@ if !exists("*GetErlangFold")
 				endif
 				let lnum = s:GetNextNonBlank(lnum)
 				let line = getline(lnum)
-			endwhile 
+			endwhile
 			" check if prev line was really end of function
 			let lnum = s:GetPrevNonBlank(a:lnum)
 			if exists("g:erlangFoldSplitFunction") && g:erlangFoldSplitFunction
@@ -164,7 +164,7 @@ if !exists("*GetErlangFold")
 				return '<1'
 			endif
 		endif
-		
+
 		" Otherwise use fold from previous line
 		return '='
 	endfunction
@@ -190,3 +190,9 @@ endif " }}}
 call s:SetErlangOptions()
 
 " vim: set foldmethod=marker:
+
+" Set tabs
+setlocal noexpandtab
+setlocal shiftwidth=4
+setlocal tabstop=4
+imap <buffer> <C-l> <Space>-><Space>

@@ -68,9 +68,6 @@ map <silent> <unique> - <C-w>-
 map <Leader>gf :0r ~/.vim/templates/gen_server_template.full<CR>:set filetype=erlang<CR>
 map <Leader>gm :0r ~/.vim/templates/gen_server_template.mini<CR>:set filetype=erlang<CR>
 
-" --- Rails ---
-imap <C-l> <Space>=><Space>
-
 " --- Rspec ---
 map <Leader>ofs :%s/ it / xit <CR>''?xit<CR>x:w<CR>
 map <Leader>ons :%s/ xit / it /<CR>'':w<CR>
