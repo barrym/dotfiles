@@ -1,0 +1,15 @@
+(setq erlang-root-dir "/usr/local/lib/erlang")
+(setq load-path (cons  "/usr/local/lib/erlang/lib/tools-2.6.5/emacs"
+load-path))
+(setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
+(require 'erlang-start)
+
+(setq-default tab-width 4
+              standard-indent 4
+              c-indent-level 4
+              indent-tabs-mode nil)
+
+(set-background-color "black")
+(set-foreground-color "white")
+(set-face-background 'region "blue")
+(set-cursor-color "red")

@@ -192,7 +192,8 @@ call s:SetErlangOptions()
 " vim: set foldmethod=marker:
 
 " Set tabs
-setlocal noexpandtab
+setlocal expandtab
 setlocal shiftwidth=4
 setlocal tabstop=4
+setlocal softtabstop=4
 imap <buffer> <C-l> <Space>-><Space>
