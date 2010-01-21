@@ -13,3 +13,7 @@ load-path))
 (set-foreground-color "white")
 (set-face-background 'region "blue")
 (set-cursor-color "red")
+
+(load "~/.emacs.d/linum.el")
+(require 'linum)
+(global-linum-mode 1)
