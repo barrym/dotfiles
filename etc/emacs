@@ -17,3 +17,10 @@ load-path))
 (load "~/.emacs.d/linum.el")
 (require 'linum)
 (global-linum-mode 1)
+
+(load "~/.emacs.d/color-theme-vibrant-ink.el")
+(color-theme-initialize)
+(color-theme-vibrant-ink)
+
+;; Set alt/option key as Meta
+(setq mac-option-modifier 'meta)
