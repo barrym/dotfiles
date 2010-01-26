@@ -22,6 +22,9 @@ load-path))
 (color-theme-initialize)
 (color-theme-vibrant-ink)
 
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(modify-syntax-entry ?$ ")^")
+
 ;; Set alt/option key as Meta
 (setq mac-option-modifier 'meta)
 
