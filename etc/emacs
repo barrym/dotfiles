@@ -4,6 +4,8 @@ load-path))
 (setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
 (require 'erlang-start)
 
+(modify-syntax-entry ?\$ "w")
+
 (setq-default tab-width 4
               standard-indent 4
               c-indent-level 4
@@ -23,7 +25,7 @@ load-path))
 (color-theme-vibrant-ink)
 
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(modify-syntax-entry ?$ ")^")
+
 
 ;; Set alt/option key as Meta
 (setq mac-option-modifier 'meta)
@@ -32,3 +34,6 @@ load-path))
 (require'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+
+(setq auto-mode-alist  (cons '(".rake$" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist  (cons '(".emacs$" . lisp-mode) auto-mode-alist))
