@@ -4,7 +4,10 @@ load-path))
 (setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
 (require 'erlang-start)
 
-(modify-syntax-entry ?\$ "w")
+(add-hook 'erlang-mode-hook 'my-syntax-hook)
+
+(defun my-syntax-hook ()
+ (modify-syntax-entry ?$ "w")) 
 
 (setq-default tab-width 4
               standard-indent 4
