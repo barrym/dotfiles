@@ -21,6 +21,7 @@ set tabstop=2
 set list
 set listchars=tab:>-,eol:$
 set guioptions=egmrLt
+set guifont=Monaco:h12
 let mapleader = ","
 
 " --- Backups & Files ---
@@ -28,7 +29,8 @@ set backup                 " Enable creation of backup file.
 set backupdir=~/.vim/backups " Where backups will go.
 set directory=~/.vim/tmp     " Where temporary files will go.
 
-colorscheme vividchalk
+" colorscheme vividchalk
+colorscheme desert
 highlight comment ctermfg=darkgreen
 hi Cursor guifg=#000000 guibg=#888888
 
