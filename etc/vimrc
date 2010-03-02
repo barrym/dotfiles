@@ -21,6 +21,7 @@ set tabstop=2
 set list
 " set listchars=tab:>-,eol:$
 set listchars=tab:>-
+set wildmode=longest,list
 set guioptions=egmrLt
 set guifont=Monaco:h12
 let mapleader = ","
