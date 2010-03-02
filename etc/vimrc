@@ -62,7 +62,7 @@ autocmd BufRead,BufNewFile,InsertLeave * redraw!
 " --- mappings ---
 map <Leader>b :BufExplorer<CR>
 map <Leader>f :Find<space>
-map <Leader>n :NERDTree<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
 " --- Window control ---
 map <silent> <unique> + <C-w>+
