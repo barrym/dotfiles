@@ -10,6 +10,7 @@ if [[ `uname` == 'Linux' ]]; then
   alias l='ls -lah --color'
   alias ll='ls -larth --color'
   alias mvim='gvim'
+  alias gitx='gitg'
 fi
 
 HISTFILESIZE=3000
