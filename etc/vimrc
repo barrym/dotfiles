@@ -24,7 +24,7 @@ set list
 set listchars=tab:>-
 set wildmode=longest,list
 set guioptions=egmrLt
-set guifont=Monaco:h12
+set guifont=Monaco:h12\\,DejaVu\ Sans\ Mono
 let mapleader = ","
 
 " --- Backups & Files ---
@@ -64,6 +64,7 @@ autocmd BufRead,BufNewFile,InsertLeave * redraw!
 map <Leader>b :BufExplorer<CR>
 map <Leader>f :Find<space>
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>t :tabnew<CR>
 
 " --- Window control ---
 map <silent> <unique> + <C-w>+
