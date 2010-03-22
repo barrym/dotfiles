@@ -14,7 +14,7 @@ if [[ `uname` == 'Linux' ]]; then
 fi
 
 HISTFILESIZE=3000
-export PATH=~/dotfiles/scripts/:~/bin:~/packages/bin:/usr/local/mysql/bin:/opt/local/bin:/usr/local/apache2/bin:/usr/sbin:$PATH
+export PATH=~/packages/R13B04/bin:/dotfiles/scripts/:~/bin:~/packages/bin:/usr/local/mysql/bin:/opt/local/bin:/usr/local/apache2/bin:/usr/sbin:$PATH
 export LSCOLORS="ExfxcxdxBxegedabagacad"
 export MANPATH=~/packages/man:/usr/local/man:$MANPATH
 export EDITOR="vim"
