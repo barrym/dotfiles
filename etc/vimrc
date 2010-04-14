@@ -33,7 +33,8 @@ set backupdir=~/.vim/backups " Where backups will go.
 set directory=~/.vim/tmp     " Where temporary files will go.
 
 " colorscheme vividchalk
-colorscheme desert
+" colorscheme desert
+colorscheme github
 highlight comment ctermfg=darkgreen
 hi Cursor guifg=#000000 guibg=#888888
 
@@ -64,7 +65,7 @@ autocmd BufRead,BufNewFile,InsertLeave * redraw!
 map <Leader>b :BufExplorer<CR>
 map <Leader>f :Find<space>
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>t :tabnew<CR>
+" map <Leader>t :tabnew<CR>
 
 " --- Window control ---
 map <silent> <unique> + <C-w>+

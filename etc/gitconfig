@@ -6,7 +6,7 @@
 [core]
 	excludesfile = /Users/barry/.gitignore
 [color]
-  ui = true
+	ui = true
 [alias]
 	st = status
 	br = branch
