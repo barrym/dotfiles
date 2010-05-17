@@ -11,4 +11,6 @@
 	st = status
 	br = branch
 	ci = commit
-	co = checkout
+    co = checkout
+[branch]
+    autosetuprebase = always
