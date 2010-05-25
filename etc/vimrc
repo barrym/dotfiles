@@ -95,3 +95,14 @@ vmap <silent> <Leader>i, <ESC>:AlignPush<CR>:AlignCtrl lp0P1l<CR>:'<,'>Align ,<C
 
 " Aligns visual block on (
 vmap <silent> <Leader>i( <ESC>:AlignPush<CR>:AlignCtrl lp0P0l<CR>:'<,'>Align (<CR>:AlignPop<CR>
+
+" --- I WILL learn vim ---
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
