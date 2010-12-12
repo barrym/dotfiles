@@ -27,7 +27,7 @@ export GOARCH=amd64
 export GOOS=darwin
 
 # Git
-source ~/dotfiles/scripts/git-completion.bash
+source ~/Dropbox/dotfiles/scripts/git-completion.bash
 
 function set_prompt {
   local BLUE="\[\033[1;34m\]"

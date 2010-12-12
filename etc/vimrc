@@ -34,9 +34,13 @@ set directory=~/.vim/tmp     " Where temporary files will go.
 
 " colorscheme vividchalk
 " colorscheme desert
-colorscheme github
-highlight comment ctermfg=darkgreen
-hi Cursor guifg=#000000 guibg=#888888
+if has('gui_running')
+    colorscheme github
+    highlight comment ctermfg=darkgreen
+    hi Cursor guifg=#000000 guibg=#888888
+else
+    colorscheme vividchalk
+endif
 
 autocmd BufRead *.ru set filetype=ruby
 autocmd BufRead *.feature set filetype=ruby
