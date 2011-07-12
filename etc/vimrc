@@ -29,8 +29,8 @@ let mapleader = ","
 
 " --- Backups & Files ---
 set backup                 " Enable creation of backup file.
-set backupdir=~/.vim/backups " Where backups will go.
-set directory=~/.vim/tmp     " Where temporary files will go.
+set backupdir=/tmp/" Where backups will go.
+set directory=/tmp/     " Where temporary files will go.
 
 " colorscheme vividchalk
 " colorscheme desert
@@ -101,12 +101,13 @@ vmap <silent> <Leader>i, <ESC>:AlignPush<CR>:AlignCtrl lp0P1l<CR>:'<,'>Align ,<C
 vmap <silent> <Leader>i( <ESC>:AlignPush<CR>:AlignCtrl lp0P0l<CR>:'<,'>Align (<CR>:AlignPop<CR>
 
 " --- I WILL learn vim ---
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+" noremap  <Up> ""
+" noremap! <Up> <Esc>
+" noremap  <Down> ""
+" noremap! <Down> <Esc>
+" noremap  <Left> ""
+" noremap! <Left> <Esc>
+" noremap  <Right> ""
+" noremap! <Right> <Esc>
 
+map <Leader>gb :GitBlame<CR>
