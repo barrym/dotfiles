@@ -12,5 +12,3 @@
 	br = branch
 	ci = commit
     co = checkout
-[branch]
-    autosetuprebase = always
