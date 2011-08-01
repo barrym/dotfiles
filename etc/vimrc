@@ -111,4 +111,4 @@ vmap <silent> <Leader>i( <ESC>:AlignPush<CR>:AlignCtrl lp0P0l<CR>:'<,'>Align (<C
 " noremap  <Right> ""
 " noremap! <Right> <Esc>
 
-map <Leader>gb :GitBlame<CR>
+map <Leader>gb :Gblame<CR>
