@@ -17,6 +17,7 @@ HISTFILESIZE=3000
 # export PATH=~/packages/R13B04/bin:~/packages/erlang/bin:~/dotfiles/scripts/:~/bin:~/packages/bin:/usr/local/mysql/bin:/usr/local/apache2/bin:/usr/local/bin:/usr/sbin:$PATH
 export PATH=~/dotfiles/scripts/:~/bin:~/packages/bin:/usr/local/mysql/bin:/usr/local/apache2/bin:/usr/local/bin:/usr/sbin:$PATH
 export PATH=~/.bundle/ruby/1.8/bin/:$PATH
+export PATH=/usr/local/share/python:$PATH
 export LSCOLORS="ExfxcxdxBxegedabagacad"
 export MANPATH=~/packages/man:/usr/local/man:$MANPATH
 export EDITOR="vim"
@@ -97,3 +98,5 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 export ARCHFLAGS="-arch x86_64"
+
+ulimit -n 2560
