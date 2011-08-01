@@ -1,6 +1,6 @@
 function! Find(name)
   let l:_name = substitute(a:name, "\\s", "*", "g")
-  let l:list=system("find . -iname '*".l:_name."*' -not -name \"*.class\" -and -not -name \"*.swp\" | perl -ne 'print \"$.\\t$_\"'")
+  let l:list=system("find . -iname '*".l:_name."*' -not -name \"*.class\" -and -not -name \"*.swp\" -and -not -name \"*.beam\"| perl -ne 'print \"$.\\t$_\"'")
   let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
   if l:num < 1
     echo "'".a:name."' not found"
