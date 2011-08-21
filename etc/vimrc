@@ -14,34 +14,41 @@ set smartcase ignorecase
 set showcmd
 set scrolloff=5
 set laststatus=2
-set statusline=%F%m\ %y\ l:\%l\/%L\ \%p%%\ c:\%c
+set statusline=%F%m\ %y%=l:\%l\/%L\ \%p%%
 set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
+set visualbell
+set nosmarttab
+set hidden
+set nolazyredraw
 
 set list
 " set listchars=tab:>-,eol:$
 set listchars=tab:>-
-set wildmode=longest,list
+set wildmode=longest,full
 set guioptions=egmrLt
 set guifont=Monaco:h12\\,DejaVu\ Sans\ Mono
-let mapleader = ","
+let mapleader = " "
 
 " --- Backups & Files ---
-set backup                 " Enable creation of backup file.
-set backupdir=/tmp/" Where backups will go.
+set nobackup
+set nowritebackup
+set noswapfile
+set undofile
+set backupdir=/tmp/     " Where backups will go.
 set directory=/tmp/     " Where temporary files will go.
+set undodir=/tmp/
 
-" colorscheme vividchalk
-" colorscheme desert
 if has('gui_running')
-    colorscheme github
-    highlight comment ctermfg=darkgreen
-    hi Cursor guifg=#000000 guibg=#888888
+    set background=light
+    colorscheme solarized
 else
-    colorscheme vividchalk
+    colorscheme solarized
 endif
+
+colorscheme overrides
 
 autocmd BufRead *.ru set filetype=ruby
 autocmd BufRead *.feature set filetype=ruby
@@ -110,5 +117,18 @@ vmap <silent> <Leader>i( <ESC>:AlignPush<CR>:AlignCtrl lp0P0l<CR>:'<,'>Align (<C
 " noremap! <Left> <Esc>
 " noremap  <Right> ""
 " noremap! <Right> <Esc>
+
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
+nore ; :
 
 map <Leader>gb :Gblame<CR>
