@@ -36,7 +36,7 @@ let mapleader = " "
 set nobackup
 set nowritebackup
 set noswapfile
-set undofile
+" set undofile
 set backupdir=/tmp/     " Where backups will go.
 set directory=/tmp/     " Where temporary files will go.
 set undodir=/tmp/
@@ -130,6 +130,8 @@ vnoremap <Down> gj
 vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
+
+imap jj <C-[>
 
 nore ; :
 
