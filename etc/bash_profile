@@ -20,7 +20,9 @@ elif [[ "$unamestr" == 'Darwin' ]];then
         source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
     fi
     export ARCHFLAGS="-arch x86_64"
+    ulimit -n 2560
     alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+    alias vi=/Applications/MacVim.app/Contents/MacOS/Vim
 fi
 
 HISTFILESIZE=3000
@@ -81,4 +83,3 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 
-ulimit -n 2560
