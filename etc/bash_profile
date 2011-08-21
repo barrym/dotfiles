@@ -1,16 +1,26 @@
 #!/bin/bash
 
+unamestr=`uname`
+
 alias l='ls -lahG'
 alias ll='ls -lGarth'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias less='less -rf'
 
-if [[ `uname` == 'Linux' ]]; then
+if [[ "$unamestr" == 'Linux' ]]; then
   alias l='ls -lah --color'
   alias ll='ls -larth --color'
   alias mvim='gvim'
   alias gitx='gitg'
+elif [[ "$unamestr" == 'Darwin' ]];then
+    # Git
+    source ~/Dropbox/dotfiles/scripts/git-completion.bash
+    if [ -f `brew --prefix`/Library/Contributions/brew_bash_completion.sh ]; then
+        source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+    fi
+    export ARCHFLAGS="-arch x86_64"
+    alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 fi
 
 HISTFILESIZE=3000
@@ -27,9 +37,6 @@ export HISTSIZE=5000
 export GOROOT=$HOME/go
 export GOARCH=amd64
 export GOOS=darwin
-
-# Git
-source ~/Dropbox/dotfiles/scripts/git-completion.bash
 
 function set_prompt {
   local BLUE="\[\033[1;34m\]"
@@ -63,26 +70,6 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
-# Rake auto-complete
-complete -C ~/dotfiles/scripts/rake_autocomplete.txt -o default rake
-
-# TEMP=`which cheat`
-# if [ $? == 0 ]; then
-#   # Cache, and complete, Cheats
-#   if [ ! -r ~/.cheats ] || [[ ! "" == `find ~ '.cheats' -ctime 1 -maxdepth 0` ]]; then
-#     echo "Rebuilding Cheat cache... "
-#     cheat sheets | egrep '^ ' | awk {'print $1'} > ~/.cheats
-#   fi
-#   complete -W "$(cat ~/.cheats)" cheat
-# fi
-
-#########
-# rails #
-#########
-
-alias ss='script/server'
-alias sc='script/console'
-alias sd='script/dbconsole'
 
 ################################################
 # add host specific commands to ~/.bash_extras #
@@ -91,12 +78,7 @@ alias sd='script/dbconsole'
 if [ -f ~/.bash_extras ]; then
   source ~/.bash_extras
 fi
-if [ -f `brew --prefix`/Library/Contributions/brew_bash_completion.sh ]; then
-    source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
-fi
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
-export ARCHFLAGS="-arch x86_64"
 
 ulimit -n 2560
