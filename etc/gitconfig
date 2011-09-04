@@ -12,3 +12,5 @@
 	br = branch
 	ci = commit
     co = checkout
+[github]
+	user = barrym
