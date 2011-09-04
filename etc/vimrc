@@ -54,6 +54,7 @@ colorscheme overrides
 
 autocmd BufRead *.ru set filetype=ruby
 autocmd BufRead *.feature set filetype=ruby
+autocmd BufRead *.less set filetype=css
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 autocmd BufNewFile,BufRead *.textile setf textile
 autocmd BufNewFile,BufRead *.go setf go
