@@ -86,10 +86,6 @@ map <Leader>n :NERDTreeToggle<CR>
 map <silent> <unique> + <C-w>+
 map <silent> <unique> - <C-w>-
 
-" --- Erlang ---
-map <Leader>gf :0r ~/.vim/templates/gen_server_template.full<CR>:set filetype=erlang<CR>
-map <Leader>gm :0r ~/.vim/templates/gen_server_template.mini<CR>:set filetype=erlang<CR>
-
 " --- Rspec ---
 map <Leader>ofs :%s/ it / xit <CR>''?xit<CR>x:w<CR>
 map <Leader>ons :%s/ xit / it /<CR>'':w<CR>
@@ -140,3 +136,4 @@ map <Leader>gb :Gblame<CR>
 
 let g:LustyExplorerSuppressRubyWarning = 1
 let g:LustyJugglerSuppressRubyWarning = 1
+let erlang_show_errors = 0
