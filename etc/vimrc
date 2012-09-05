@@ -7,11 +7,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'sjbach/lusty'
 Bundle 'torandu/vim-bufexplorer'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'kien/ctrlp.vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'ervandew/supertab'
 Bundle 'Vimerl'
 Bundle 'Align'
 
