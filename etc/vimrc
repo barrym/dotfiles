@@ -1,7 +1,21 @@
-call pathogen#runtime_append_all_bundles()
 set nocompatible          " We're running Vim, not Vi!
-syntax on                 " Enable syntax highlighting
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'sjbach/lusty'
+Bundle 'torandu/vim-bufexplorer'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'Vimerl'
+Bundle 'nanotech/jellybeans.vim'
+
 filetype plugin indent on " Enable filetype-specific indenting and plugins
+
+syntax on                 " Enable syntax highlighting
 
 set autoread
 set number
@@ -44,13 +58,13 @@ set undodir=/tmp/
 if has('gui_running')
     set background=light
     set background=dark
-    colorscheme solarized
+    colorscheme jellybeans
 else
     set background=dark
-    colorscheme solarized
+    colorscheme jellybeans
 endif
 
-colorscheme overrides
+" colorscheme overrides
 
 autocmd BufRead *.ru set filetype=ruby
 autocmd BufRead *.feature set filetype=ruby
