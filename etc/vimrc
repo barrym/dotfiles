@@ -10,8 +10,10 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'sjbach/lusty'
 Bundle 'torandu/vim-bufexplorer'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'Vimerl'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Vimerl'
+Bundle 'Align'
 
 filetype plugin indent on " Enable filetype-specific indenting and plugins
 
