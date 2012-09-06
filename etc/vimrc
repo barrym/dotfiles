@@ -68,7 +68,7 @@ else
     colorscheme jellybeans
 endif
 
-" colorscheme overrides
+colorscheme overrides
 
 autocmd BufRead *.ru set filetype=ruby
 autocmd BufRead *.feature set filetype=ruby
@@ -100,27 +100,6 @@ map <Leader>b :BufExplorer<CR>
 " --- Window control ---
 map <silent> <unique> + <C-w>+
 map <silent> <unique> - <C-w>-
-
-" --- Rspec ---
-map <Leader>ofs :%s/ it / xit <CR>''?xit<CR>x:w<CR>
-map <Leader>ons :%s/ xit / it /<CR>'':w<CR>
-
-" --- Align ---
-
-" From inside a hash, autoindents, then aligns on =>
-nmap <silent> <Leader>ih <ESC>:AlignPush<CR>:AlignCtrl lp1P1l<CR>mmviB:Align =><CR>:AlignPop<CR>'mvaB=
-
-" Autoformats a single line hash
-nmap <Leader>fh <ESC>^:s/{/{\r/<CR>:s/}$/\r}<CR>vaB:s/\v,\s*:/,\r:/g<CR><Leader>ih
-
-" Aligns visual block on =
-vmap <silent> <Leader>i= <ESC>:AlignPush<CR>:AlignCtrl lp1P1l<CR>:'<,'>Align =<CR>:AlignPop<CR>
-
-" Aligns visual block on ,
-vmap <silent> <Leader>i, <ESC>:AlignPush<CR>:AlignCtrl lp0P1l<CR>:'<,'>Align ,<CR>:AlignPop<CR>
-
-" Aligns visual block on (
-vmap <silent> <Leader>i( <ESC>:AlignPush<CR>:AlignCtrl lp0P0l<CR>:'<,'>Align (<CR>:AlignPop<CR>
 
 " --- I WILL learn vim ---
 " noremap  <Up> ""
