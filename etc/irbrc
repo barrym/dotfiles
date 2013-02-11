@@ -10,21 +10,6 @@ prefer 'rubygems'
 prefer 'irb/completion'
 prefer 'irb/ext/save-history'
 prefer 'pp'
-prefer 'irb_callbacks'
-
-# prefer 'benchmark'
-# 
-# module IRB
-#   def self.around_eval(&block)
-#     @timing = Benchmark.realtime do
-#       block.call
-#     end
-#   end
-# 
-#   def self.after_output
-#     puts "=> #{ANSI_GREEN}#{'%.3f' % @timing} seconds#{ANSI_RESET}"
-#   end
-# end
 
 ANSI_BLACK = "\033[0;30m"
 ANSI_GRAY = "\033[1;30m"
@@ -87,7 +72,7 @@ module IRB
   def self.quiet
     self.result_format = ''
   end
-end 
+end
 
 # Just for Rails...
 if rails_env = ENV['RAILS_ENV']
@@ -100,27 +85,4 @@ if rails_env = ENV['RAILS_ENV']
     :RETURN   => "=> %s\n"
   }
   IRB.conf[:PROMPT_MODE] = :RAILS
-
-  # Called after the irb session is initialized and Rails has
-  # been loaded (props: Mike Clark).
-  IRB.conf[:IRB_RC] = Proc.new do
-    if defined? ActiveRecord
-      ActiveRecord::Base.logger = Logger.new(STDOUT)
-      ActiveRecord::Base.instance_eval { alias :[] :find }
-
-      module ActiveRecord
-        class Base
-          def self.first(*args)
-            options = args.extract_options!
-            find_initial(options)
-          end
-
-          def self.all(*args)
-            options = args.extract_options!
-            find_every(options)
-          end
-        end
-      end
-    end
-  end
 end
