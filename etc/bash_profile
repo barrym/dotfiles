@@ -7,6 +7,7 @@ alias ll='ls -lGarth'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias less='less -rf'
+alias be='bundle exec'
 
 if [[ "$unamestr" == 'Linux' ]]; then
   alias l='ls -lah --color'
