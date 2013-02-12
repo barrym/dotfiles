@@ -54,7 +54,7 @@ function set_prompt {
   prompt2='$(__git_ps1 ".%s")'
   prompt3="${RESET}"
 
-  PS1="$prompt1$prompt2$prompt3$ "
+  PS1="$prompt1$prompt2$prompt3\n$ "
 
 }
 
@@ -78,6 +78,8 @@ eval "$(rbenv init -)"
 
 export PATH=./bin:$PATH
 export PATH=./:$PATH
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 ################################################
 # add host specific commands to ~/.bash_extras #
