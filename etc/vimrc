@@ -16,6 +16,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'ervandew/supertab'
 Bundle 'Vimerl'
 Bundle 'Align'
+Bundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on " Enable filetype-specific indenting and plugins
 
@@ -47,7 +48,7 @@ set list
 set listchars=tab:>-
 set wildmode=longest,full
 set guioptions=egmrLt
-set guifont=Monaco:h12\\,DejaVu\ Sans\ Mono
+set guifont=Source\ Code\ Pro\ ExtraLight:h12,Monaco:h12\\,DejaVu\ Sans\ Mono
 let mapleader = " "
 
 " --- Backups & Files ---
