@@ -38,8 +38,9 @@ export HISTSIZE=5000
 
 # Go
 # export GOROOT=$HOME/go
-export GOARCH=amd64
-export GOOS=darwin
+# export GOARCH=amd64
+# export GOOS=darwin
+export GOPATH=~/code/personal/go
 
 function set_prompt {
   local BLUE="\[\033[1;34m\]"
