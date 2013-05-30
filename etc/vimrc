@@ -48,6 +48,8 @@ set nosmarttab
 set hidden
 set nolazyredraw
 
+let &colorcolumn=join(range(81,999),",")
+
 set list
 " set listchars=tab:>-,eol:$
 set listchars=tab:>-
@@ -75,6 +77,8 @@ else
 endif
 
 colorscheme overrides
+
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 autocmd BufRead *.ru set filetype=ruby
 autocmd BufRead *.feature set filetype=ruby
