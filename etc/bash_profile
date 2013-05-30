@@ -54,7 +54,7 @@ function set_prompt {
   prompt2='$(__git_ps1 ".%s")'
   prompt3="${RESET}"
 
-  PS1="$prompt1$prompt2$prompt3\n$ "
+  PS1="[\A] $prompt1$prompt2$prompt3\n$ "
 
 }
 
