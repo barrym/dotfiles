@@ -17,6 +17,7 @@ Bundle 'ervandew/supertab'
 Bundle 'Align'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ctrlp.vim'
+Bundle 'mileszs/ack.vim'
 
 :let g:ctrlp_map = '<Leader>t'
 :let g:ctrlp_match_window_bottom = 0
@@ -52,7 +53,7 @@ set list
 set listchars=tab:>-
 set wildmode=longest,full
 set guioptions=egmrLt
-set guifont=Source\ Code\ Pro\ ExtraLight:h12,Monaco:h12\\,DejaVu\ Sans\ Mono
+" set guifont=Source\ Code\ Pro\ ExtraLight:h12,Monaco:h12\\,DejaVu\ Sans\ Mono
 let mapleader = " "
 
 " --- Backups & Files ---
