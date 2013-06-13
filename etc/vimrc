@@ -17,6 +17,7 @@ Bundle 'ervandew/supertab'
 Bundle 'Align'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ctrlp.vim'
+Bundle 'mileszs/ack.vim'
 
 :let g:ctrlp_map = '<Leader>t'
 :let g:ctrlp_match_window_bottom = 0
@@ -37,7 +38,7 @@ set smartcase ignorecase
 set showcmd
 set scrolloff=5
 set laststatus=2
-set statusline=%F%m\ %y%=l:\%l\/%L\ \%p%%
+set statusline=%F%m\ %y%=c:%c\ l:%l\/%L\ \%p%%
 set expandtab
 set shiftwidth=4
 set tabstop=4
@@ -47,12 +48,14 @@ set nosmarttab
 set hidden
 set nolazyredraw
 
+let &colorcolumn=join(range(81,999),",")
+
 set list
 " set listchars=tab:>-,eol:$
 set listchars=tab:>-
 set wildmode=longest,full
 set guioptions=egmrLt
-set guifont=Source\ Code\ Pro\ ExtraLight:h12,Monaco:h12\\,DejaVu\ Sans\ Mono
+" set guifont=Source\ Code\ Pro\ ExtraLight:h12,Monaco:h12\\,DejaVu\ Sans\ Mono
 let mapleader = " "
 
 " --- Backups & Files ---
@@ -74,6 +77,8 @@ else
 endif
 
 colorscheme overrides
+
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 autocmd BufRead *.ru set filetype=ruby
 autocmd BufRead *.feature set filetype=ruby

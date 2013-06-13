@@ -38,8 +38,9 @@ export HISTSIZE=5000
 
 # Go
 # export GOROOT=$HOME/go
-export GOARCH=amd64
-export GOOS=darwin
+# export GOARCH=amd64
+# export GOOS=darwin
+export GOPATH=~/code/personal/go
 
 function set_prompt {
   local BLUE="\[\033[1;34m\]"
@@ -54,7 +55,7 @@ function set_prompt {
   prompt2='$(__git_ps1 ".%s")'
   prompt3="${RESET}"
 
-  PS1="$prompt1$prompt2$prompt3\n$ "
+  PS1="[\A] $prompt1$prompt2$prompt3\n$ "
 
 }
 
