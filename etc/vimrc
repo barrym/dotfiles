@@ -48,7 +48,8 @@ set nosmarttab
 set hidden
 set nolazyredraw
 
-let &colorcolumn=join(range(81,999),",")
+" let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="81,".join(range(101,999),",")
 
 set list
 " set listchars=tab:>-,eol:$
