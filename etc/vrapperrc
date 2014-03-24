@@ -1,0 +1,8 @@
+imap jj <C-[>
+nore ; :
+
+
+# junit
+
+eclipseaction junit org.eclipse.jdt.junit.junitShortcut.run
+eclipseaction junitlast org.eclipse.jdt.junit.junitShortcut.rerunLast
