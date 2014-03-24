@@ -16,9 +16,13 @@ if [[ "$unamestr" == 'Linux' ]]; then
   alias gitx='gitg'
 elif [[ "$unamestr" == 'Darwin' ]];then
     # Git
-    source ~/Dropbox/dotfiles/scripts/git-completion.bash
-    if [ -f `brew --prefix`/Library/Contributions/brew_bash_completion.sh ]; then
-        source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+    if [ -f ~/Dropbox ]; then
+        source ~/Dropbox/dotfiles/scripts/git-completion.bash
+    fi
+    if [ -f brew ];then
+        if [ -f `brew --prefix`/Library/Contributions/brew_bash_completion.sh ]; then
+            source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+        fi
     fi
     export ARCHFLAGS="-arch x86_64"
     ulimit -n 2560
@@ -74,8 +78,10 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -f $HOME/.rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 export PATH=./bin:$PATH
 export PATH=./:$PATH
