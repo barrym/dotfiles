@@ -1,8 +1,10 @@
 imap jj <C-[>
 nore ; :
 
+" http://sourceforge.net/p/vrapper/discussion/901740/thread/71ddd21c/?limit=25
+set syncmodifiable=nosync
 
-# junit
+" junit
 
 eclipseaction junit org.eclipse.jdt.junit.junitShortcut.run
 eclipseaction junitlast org.eclipse.jdt.junit.junitShortcut.rerunLast
