@@ -139,3 +139,6 @@ map <Leader>gb :Gblame<CR>
 
 let g:LustyExplorerSuppressRubyWarning = 1
 let g:LustyJugglerSuppressRubyWarning = 1
+
+" Put machine specific vimrc setup in .~/.vimrc_local
+source ~/.vimrc_local
