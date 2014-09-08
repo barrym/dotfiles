@@ -24,7 +24,7 @@ myLayout = onWorkspace "eclipse" eclipseLayout $ defaultLayouts
 main = do
     xmproc <- spawnPipe "`which xmobar` ~/.xmonad/xmobarrc"
     xmonad $ defaultConfig
-        { modMask = mod4Mask
+        { modMask = mod4Mask -- Set Windows key as meta
         , workspaces = myWorkspaces
         , terminal = "gnome-terminal"
         , manageHook = manageDocks <+> manageHook defaultConfig
