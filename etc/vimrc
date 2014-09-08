@@ -9,16 +9,13 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 " Bundle 'sjbach/lusty'
-" Bundle 'torandu/vim-bufexplorer'
 Bundle 'bufexplorer.zip'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'ervandew/supertab'
 Bundle 'Align'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ctrlp.vim'
-Bundle 'mileszs/ack.vim'
 
 :let g:ctrlp_map = '<Leader>t'
 :let g:ctrlp_match_window_bottom = 0
@@ -142,4 +139,3 @@ map <Leader>gb :Gblame<CR>
 
 let g:LustyExplorerSuppressRubyWarning = 1
 let g:LustyJugglerSuppressRubyWarning = 1
-let erlang_show_errors = 0
