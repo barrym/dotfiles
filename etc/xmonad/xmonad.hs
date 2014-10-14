@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Actions.GridSelect
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Grid
 import XMonad.Layout.NoBorders
@@ -8,7 +9,7 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Util.EZConfig
 import XMonad.Util.Run(spawnPipe,hPutStrLn)
 
-myWorkspaces = ["chrome","terminal","eclipse"]
+myWorkspaces = ["chrome", "terminal", "editor", "other"]
 
 defaultLayouts = tiled ||| Mirror tiled ||| Full ||| Grid
     where
@@ -17,9 +18,15 @@ defaultLayouts = tiled ||| Mirror tiled ||| Full ||| Grid
         delta = 3/100
         ratio = 1/2
 
-eclipseLayout = noBorders $ Full
+editorLayout = noBorders $ Full
 
-myLayout = onWorkspace "eclipse" eclipseLayout $ defaultLayouts
+myLayout = onWorkspace "editor" editorLayout $ defaultLayouts
+
+-- Custom spawnSelected which adds labels to commands
+-- http://ixti.net/software/2013/09/07/xmonad-action-gridselect-spawnselected-with-nice-titles.html
+spawnSelected' :: [(String, String)] => X ()
+spawnSelected' lst = gridselect conf lst >>= flip whenJust spawn
+    where conf = defaultGSConfig
 
 main = do
     xmproc <- spawnPipe "`which xmobar` ~/.xmonad/xmobarrc"
@@ -32,7 +39,7 @@ main = do
         , borderWidth = 5
         , focusedBorderColor = "#a3cc7a"
         , normalBorderColor = "#888888"
-        , logHook = dynamicLogWithPP $ xmobarPP
+        , logHook = takeTopFocus <+> dynamicLogWithPP xmobarPP
                 { ppOutput = hPutStrLn xmproc
                 -- , ppTitle = xmobarColor "#a3cc7a" "" . shorten 50
                 , ppTitle = xmobarColor "#a3cc7a" ""
@@ -40,5 +47,10 @@ main = do
         }
         `additionalKeysP`
         [ ("M-g", goToSelected defaultGSConfig)
-        , ("M-s", spawnSelected defaultGSConfig ["google-chrome", "eclipse44"])
+        -- , ("M-s", spawnSelected defaultGSConfig ["google-chrome --disable-gpu", "eclipse44", "~/apps/intellij13/bin/idea.sh"])
+        , ("M-s", spawnSelected'
+        [ ("Chrome", "google-chrome --disable-gpu")
+        , ("Eclipse", "eclipse44")
+        , ("IntelliJ", "~/apps/intellij13/bin/idea.sh")
+        ])
         ]
