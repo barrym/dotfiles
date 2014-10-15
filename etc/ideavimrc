@@ -1,3 +1,5 @@
+set smartcase ignorecase
+set hlsearch
 
 nnoremap j gj
 nnoremap k gk
