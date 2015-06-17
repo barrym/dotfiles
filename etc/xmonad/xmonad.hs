@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Actions.GridSelect
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Grid
@@ -30,7 +31,7 @@ spawnSelected' lst = gridselect conf lst >>= flip whenJust spawn
 
 main = do
     xmproc <- spawnPipe "`which xmobar` ~/.xmonad/xmobarrc"
-    xmonad $ defaultConfig
+    xmonad $ ewmh defaultConfig
         { modMask = mod4Mask -- Set Windows key as meta
         , workspaces = myWorkspaces
         , terminal = "gnome-terminal"
@@ -44,6 +45,7 @@ main = do
                 -- , ppTitle = xmobarColor "#a3cc7a" "" . shorten 50
                 , ppTitle = xmobarColor "#a3cc7a" ""
                 }
+        , handleEventHook = handleEventHook defaultConfig <+> fullscreenEventHook
         }
         `additionalKeysP`
         [ ("M-g", goToSelected defaultGSConfig)
