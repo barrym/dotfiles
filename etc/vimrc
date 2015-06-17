@@ -15,11 +15,8 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'ervandew/supertab'
 Bundle 'Align'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'ctrlp.vim'
-
-:let g:ctrlp_map = '<Leader>t'
-:let g:ctrlp_match_window_bottom = 0
-:let g:ctrlp_match_window_reversed = 0
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on " Enable filetype-specific indenting and plugins
 
@@ -102,13 +99,20 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd BufRead,BufNewFile,ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufRead,BufNewFile,InsertLeave * redraw!
 
-" --- mappings ---
+" --- Mappings ---
 map <Leader>b :BufExplorer<CR>
-" map <Leader>t :tabnew<CR>
+map <Leader>t :tabnew<CR>
 
 " --- Window control ---
 map <silent> <unique> + <C-w>+
 map <silent> <unique> - <C-w>-
+
+" CtrlP
+:let g:ctrlp_map = '<Leader>p'
+:let g:ctrlp_match_window_bottom = 0
+:let g:ctrlp_match_window_reversed = 0
+nmap <Leader>e :CtrlPMRU<CR>
+
 
 " --- I WILL learn vim ---
 " noremap  <Up> ""
@@ -131,7 +135,7 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
-imap jj <C-[>
+imap kj <C-[>
 
 nore ; :
 
