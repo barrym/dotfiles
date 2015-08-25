@@ -1,23 +1,24 @@
 set nocompatible          " We're running Vim, not Vi!
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-" Bundle 'sjbach/lusty'
-Bundle 'bufexplorer.zip'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'ervandew/supertab'
-Bundle 'Align'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+" Plugin 'sjbach/lusty'
+Plugin 'bufexplorer.zip'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'ervandew/supertab'
+Plugin 'Align'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
 
+call vundle#end()
 filetype plugin indent on " Enable filetype-specific indenting and plugins
 
 syntax on                 " Enable syntax highlighting
