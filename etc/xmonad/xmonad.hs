@@ -10,7 +10,7 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Util.EZConfig
 import XMonad.Util.Run(spawnPipe,hPutStrLn)
 
-myWorkspaces = ["chrome", "terminal", "editor", "other"]
+myWorkspaces = ["chrome", "terminal", "editor", "other", "overflow"]
 
 defaultLayouts = tiled ||| Mirror tiled ||| Full ||| Grid
     where
